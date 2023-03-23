@@ -83,7 +83,7 @@ class Assets {
             'ajaxurl'   => admin_url( 'admin-ajax.php' ),
             'user_id'   => get_current_user_id(),
             'post_id'   => get_the_ID(),
-            'nonce'     => wp_create_nonce( 'exam-reaction-nonce' ),
+            'nonce'     => wp_create_nonce( 'exam-reaction-button-nonce' ),
         ] );
     }
 }

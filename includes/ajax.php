@@ -12,7 +12,8 @@ class Ajax {
      */
     function __construct() {
         add_action( 'wp_ajax_exam_reaction_button_add', [ $this, 'submit_reaction'] );
-        add_action( 'wp_ajax_nopriv_exam_reaction_button_add', [ $this, 'submit_reaction'] );
+
+        add_action( 'wp_ajax_exam_reaction_button_delete', [ $this, 'delete_reaction'] );
     }
 
     /**
@@ -22,13 +23,14 @@ class Ajax {
      */
     public function submit_reaction() {
 
-        if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'exam-reaction-nonce' ) ) {
+        if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'exam-reaction-button-nonce' ) ) {
             wp_send_json_error( [
                 'message' => __( 'Nonce verification failed!', 'exam-reaction-button' )
             ] );
         }
 
         $args = [
+            'user_id'   => sanitize_text_field( $_REQUEST['user_id'] ),
             'post_id'   => sanitize_text_field( $_REQUEST['post_id'] ),
             'react_id'  => sanitize_text_field( $_REQUEST['react_id'] ),
         ];
@@ -43,4 +45,29 @@ class Ajax {
 
     }
 
+    /**
+     * Handle reaction deletion
+     *
+     * @return void
+     */
+    public function delete_reaction() {
+        if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'exam-reaction-button-nonce' ) ) {
+            wp_send_json_error( [
+                'message' => __( 'Nonce verification failed!', 'exam-reaction-button' )
+            ] );
+        }
+
+        $args = [
+            'user_id'   => sanitize_text_field( $_REQUEST['user_id'] ),
+            'post_id'   => sanitize_text_field( $_REQUEST['post_id'] ),
+        ];
+
+        $delete_reaction = exam_reaction_button_delete_reaction( $args );
+
+        if( isset( $delete_reaction ) ) {
+            wp_send_json_success([
+                'message' => __( 'Reaction has been deleted successfully!', 'exam-reaction-button' )
+            ]);
+        }
+    }
 }

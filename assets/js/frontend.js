@@ -29,6 +29,19 @@
         ajax_handler(data);
     });
 
+    // Delete Reaction for a specific page
+    $('.delete_reaction').click(function(){
+        let user_id     = examReactionButton.user_id;
+        let post_id     = examReactionButton.post_id;
+        var data = {
+            'action'        : 'exam_reaction_button_delete',
+            'user_id'       : user_id,
+            'post_id'       : post_id,
+            '_wpnonce'      : examReactionButton.nonce
+        };
+        ajax_handler(data);
+    });
+
     // Handle ajax request 
     function ajax_handler(data) {
         $.ajax({

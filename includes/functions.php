@@ -11,7 +11,7 @@ function exam_reaction_button_insert_reaction( $args = [] ) {
     global $wpdb;
 
     $defaults = [
-        'user_id'       => get_current_user_id(),
+        'user_id'       => $args['user_id'],
         'post_id'       => $args['post_id'],
         'react_id'      => $args['react_id'],
         'reacted_time'  => current_time( 'mysql' ),
@@ -19,7 +19,7 @@ function exam_reaction_button_insert_reaction( $args = [] ) {
 
     $data = wp_parse_args( $args, $defaults );
 
-    $data_exists = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM `{$wpdb->prefix}exam_reaction_button` WHERE user_id = %d AND post_id = %d", get_current_user_id(), $args['post_id'] ) );
+    $data_exists = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM `{$wpdb->prefix}exam_reaction_button` WHERE user_id = %d AND post_id = %d", $args['user_id'], $args['post_id'] ) );
 
     if (  $data_exists ) {
 
@@ -56,4 +56,24 @@ function exam_reaction_button_insert_reaction( $args = [] ) {
 
         return $wpdb->insert_id;
     }
+}
+
+/**
+ * Delete previous reaction
+ *
+ * @param  array  $args
+ *
+ * @return int|WP_Error
+ */
+function exam_reaction_button_delete_reaction( $args = [] ) {
+    global $wpdb;
+
+    $data_exists = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM `{$wpdb->prefix}exam_reaction_button` WHERE user_id = %d AND post_id = %d", $args['user_id'], $args['post_id'] ) );
+    
+    return $wpdb->delete(
+        $wpdb->prefix . 'exam_reaction_button',
+        [ 'id' => $data_exists ],
+        [ '%d' ]
+    );
+    
 }
