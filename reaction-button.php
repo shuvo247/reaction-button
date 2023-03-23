@@ -82,6 +82,10 @@ final class EXAM_Reaction_Button {
         new Exam\Reaction\Button\Assets();
 
         new Exam\Reaction\Button\Frontend();
+
+        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+            new Exam\Reaction\Button\Ajax();
+        }
     }
 
     /**

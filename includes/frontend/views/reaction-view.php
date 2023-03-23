@@ -1,5 +1,5 @@
 <div class="reactions">
-    <button class="reaction-icon" data-icon-id="1">Smile</button>
-    <button class="reaction-icon" data-icon-id="1">Straight</button>
-    <button class="reaction-icon" data-icon-id="1">Sad</button>
+    <button class="reaction-icon" data-react-id="1">Smile</button>
+    <button class="reaction-icon" data-react-id="2">Straight</button>
+    <button class="reaction-icon" data-react-id="3">Sad</button>
 </div>
