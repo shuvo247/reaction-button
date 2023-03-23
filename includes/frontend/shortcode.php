@@ -21,7 +21,7 @@ class Shortcode {
      */
     public function render_shortcode() {
         ob_start();
-        include EXAM_REACTION_BUTTON_PATH_FRONTEND . '/views/reaction-form.php';
+        include EXAM_REACTION_BUTTON_PATH_FRONTEND . '/views/reaction-view.php';
         return ob_get_clean();
     }
 }

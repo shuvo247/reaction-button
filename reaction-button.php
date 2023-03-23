@@ -37,6 +37,8 @@ final class EXAM_Reaction_Button {
 
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
 
+        register_deactivation_hook( __FILE__, [ $this, 'deactive' ] );
+
         add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
     }
 
@@ -77,8 +79,9 @@ final class EXAM_Reaction_Button {
      */
     public function init_plugin() {
 
-        new Exam\Reaction\Button\Frontend();
+        new Exam\Reaction\Button\Assets();
 
+        new Exam\Reaction\Button\Frontend();
     }
 
     /**
@@ -87,8 +90,20 @@ final class EXAM_Reaction_Button {
      * @return void
      */
     public function activate() {
-        // silence is golden
+        $installer = new Exam\Reaction\Button\Installer();
+        $installer->activate();
     }
+
+    /**
+     * Do something while deactivating plugin
+     *
+     * @return void
+     */
+    public function deactive() {
+        $installer = new Exam\Reaction\Button\Installer();
+        $installer->deactivate();
+    }
+
 }
 
 /**
