@@ -32,7 +32,7 @@ class Ajax {
             'post_id'   => sanitize_text_field( $_REQUEST['post_id'] ),
             'react_id'  => sanitize_text_field( $_REQUEST['react_id'] ),
         ];
-
+        
         $insert_reaction = exam_reaction_button_insert_reaction( $args );
 
         if( isset( $insert_reaction ) ) {

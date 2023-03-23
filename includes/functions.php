@@ -19,22 +19,20 @@ function exam_reaction_button_insert_reaction( $args = [] ) {
 
     $data = wp_parse_args( $args, $defaults );
 
-    if ( isset( $data['id'] ) ) {
+    $data_exists = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM `{$wpdb->prefix}exam_reaction_button` WHERE user_id = %d AND post_id = %d", get_current_user_id(), $args['post_id'] ) );
 
-        $id = $data['id'];
-        unset( $data['id'] );
+    if (  $data_exists ) {
 
         $updated = $wpdb->update(
             $wpdb->prefix . 'exam_reaction_button',
             $data,
-            [ 'id' => $id ],
+            [ 'id' => $data_exists ],
             [
                 '%s',
                 '%s',
                 '%s',
                 '%s'
             ],
-            [ '%d' ]
         );
 
         return $updated;

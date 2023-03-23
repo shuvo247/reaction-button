@@ -16,7 +16,6 @@
       
     // Send ajax request to add reaction
     $('.reaction-icon').click(function(){
-
         let react_id    = $(this).attr('data-react-id');
         let user_id     = examReactionButton.user_id;
         let post_id     = examReactionButton.post_id;
@@ -27,6 +26,11 @@
             'post_id'       : post_id,
             '_wpnonce'      : examReactionButton.nonce
         };
+        ajax_handler(data);
+    });
+
+    // Handle ajax request 
+    function ajax_handler(data) {
         $.ajax({
             url: examReactionButton.ajaxurl,
             data: data,
@@ -35,9 +39,9 @@
                 console.log(data);
                 Toast.fire({
                     icon: 'success',
-                    title: 'Signed in successfully'
+                    title: data.data.message
                 }) 
             }
         });
-    });
+    }
 }(jQuery));

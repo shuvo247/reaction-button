@@ -70,6 +70,7 @@ class Installer {
      * @return void
      */
     public function drop_tables() {
+        
         global $wpdb;
 
         $wpdb->query("DROP TABLE IF EXISTS `{$wpdb->prefix}exam_reaction_button`");
