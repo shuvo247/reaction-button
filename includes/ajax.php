@@ -39,7 +39,8 @@ class Ajax {
 
         if( isset( $insert_reaction ) ) {
             wp_send_json_success([
-                'message' => __( 'Reaction has been sent successfully!', 'exam-reaction-button' )
+                'message'           => __( 'Reaction has been sent successfully!', 'exam-reaction-button' ),
+                'count_react'       =>  exam_reaction_button_count_react(),
             ]);
         }
 
@@ -66,7 +67,8 @@ class Ajax {
 
         if( isset( $delete_reaction ) ) {
             wp_send_json_success([
-                'message' => __( 'Reaction has been deleted successfully!', 'exam-reaction-button' )
+                'message'        => __( 'Reaction has been deleted successfully!', 'exam-reaction-button' ),
+                'count_react'    =>  exam_reaction_button_count_react(),
             ]);
         }
     }

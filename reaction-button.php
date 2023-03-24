@@ -40,6 +40,7 @@ final class EXAM_Reaction_Button {
         register_deactivation_hook( __FILE__, [ $this, 'deactive' ] );
 
         add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
+
     }
 
     /**

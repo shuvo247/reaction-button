@@ -1,0 +1,54 @@
+:root {
+    --color-disabled : #c8c8c8;
+}
+.reaction-button {
+    margin-top: 50px;
+    margin-left: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 300px;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+.reaction-button .reaction-icon.smile svg{
+    fill: var(--color-disabled);
+}
+.reaction-button .reaction-icon.smile.active svg{
+    fill: #018000;
+}
+
+.reaction-button .reaction-icon.straight svg{
+    fill: var(--color-disabled);
+}
+.reaction-button .reaction-icon.straight.active svg{
+    fill: #183153;
+}
+
+.reaction-button .reaction-icon.sad svg{
+    fill: var(--color-disabled);
+}
+.reaction-button .reaction-icon.sad.active svg{
+    fill: #FF2500;
+}
+.reaction-button .reaction-icon {
+    position: relative;
+}
+.reaction-button .counting {
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    font-size: 18px;
+    background: #595959;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50%;
+}
