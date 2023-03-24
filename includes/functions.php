@@ -80,16 +80,16 @@ function exam_reaction_button_delete_reaction( $args = [] ) {
 }
 
 /**
- * Get reaction count by react_id
+ * Get reaction count by post_id and react_id
  *
- * @param $react_id $react_id [1 = Smile, 2 = Straight, 3 = Sad]
+ * @param $post_id $react_id 
  *
  * @return integer
  */
-function exam_reaction_button_count_by_react_id( $react_id ) {
+function exam_reaction_button_count_by_post_and_react_id( $post_id, $react_id ) {
     global $wpdb;
 
-    return $wpdb->get_var("SELECT COUNT(*) FROM `{$wpdb->prefix}exam_reaction_button` WHERE react_id = $react_id");
+    return $wpdb->get_var("SELECT COUNT(*) FROM `{$wpdb->prefix}exam_reaction_button` WHERE post_id = $post_id AND react_id = $react_id");
 
 }
 
@@ -113,14 +113,16 @@ function exam_reaction_button_cur() {
 /**
  * Get all react count with react_id as key and count as value
  *
+ * @param $post_id
+ * 
  * @return array
  */
 
-function exam_reaction_button_count_react() {
+function exam_reaction_button_count_react( $post_id ) {
     global $wpdb;
 
     // get all react
-    $all_react = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}exam_reaction_button`");
+    $all_react = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}exam_reaction_button` WHERE post_id = $post_id");
 
     $count = array(
         '1'     => 0,

@@ -71,6 +71,7 @@ final class EXAM_Reaction_Button {
         define( 'EXAM_REACTION_BUTTON_ASSETS', EXAM_REACTION_BUTTON_URL . '/assets' );
         define( 'EXAM_REACTION_BUTTON_PATH_INCLUDES', EXAM_REACTION_BUTTON_PATH . '/includes' );
         define( 'EXAM_REACTION_BUTTON_PATH_FRONTEND', EXAM_REACTION_BUTTON_PATH_INCLUDES . '/frontend' );
+        define( 'EXAM_REACTION_BUTTON_PATH_ADMIN', EXAM_REACTION_BUTTON_PATH_INCLUDES . '/admin' );
     }
 
     /**
@@ -83,6 +84,10 @@ final class EXAM_Reaction_Button {
         new Exam\Reaction\Button\Assets();
 
         new Exam\Reaction\Button\Frontend();
+
+        if( is_admin() ) {
+            new Exam\Reaction\Button\Admin();
+        }
 
         if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
             new Exam\Reaction\Button\Ajax();

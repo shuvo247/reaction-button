@@ -4,7 +4,21 @@
     // get user_id and post_id from global constant
     let user_id     = examReactionButton.user_id;
     let post_id     = examReactionButton.post_id;
-    
+    // console.log(user_id);
+    // Check authenticated user 
+    function check_auth() {
+        if( user_id != 0 ) {
+            return true;
+        }else{
+            // Fire toaster for message
+            Toast.fire({
+                icon: 'error',
+                title: 'Authentication Required',
+            });
+            return false;
+        }
+    }
+
     // Create toaster using sweetalert2
     const Toast = Swal.mixin({
         toast: true,
@@ -20,30 +34,35 @@
       
     // Send ajax request to add reaction
     $(document).on('click','.reaction-icon.inactive',function(){
-        let react_id    = $(this).attr('data-react-id');
-        var data = {
-            'action'        : 'exam_reaction_button_add',
-            'react_id'      : react_id,
-            'user_id'       : user_id,
-            'post_id'       : post_id,
-            'type'          : 'add',
-            '_wpnonce'      : examReactionButton.nonce
-        };
-        ajax_handler(data,this);
+        if( check_auth()  ) {
+            let react_id    = $(this).attr('data-react-id');
+            var data = {
+                'action'        : 'exam_reaction_button_add',
+                'react_id'      : react_id,
+                'user_id'       : user_id,
+                'post_id'       : post_id,
+                'type'          : 'add',
+                '_wpnonce'      : examReactionButton.nonce
+            };
+            ajax_handler(data,this);
+        }
+
     });
 
     // Delete Reaction for a specific page or post
     $(document).on('click','.reaction-icon.active',function(){
-        let react_id    = $(this).attr('data-react-id');
-        var data = {
-            'action'        : 'exam_reaction_button_delete',
-            'user_id'       : user_id,
-            'post_id'       : post_id,
-            'react_id'      : react_id,
-            'type'          : 'remove',
-            '_wpnonce'      : examReactionButton.nonce
-        };
-        ajax_handler(data,this);
+        if( check_auth() ) {
+            let react_id    = $(this).attr('data-react-id');
+            var data = {
+                'action'        : 'exam_reaction_button_delete',
+                'user_id'       : user_id,
+                'post_id'       : post_id,
+                'react_id'      : react_id,
+                'type'          : 'remove',
+                '_wpnonce'      : examReactionButton.nonce
+            };
+            ajax_handler(data,this);
+        }
     });
 
     // Handle ajax request 
@@ -53,7 +72,6 @@
             data: __data,
             type: 'POST',
             success: function (data) {
-
                 // update count number
                 let count_react_obj = data.data.count_react;
                 for ( let key in count_react_obj ) {
@@ -68,6 +86,7 @@
                 }else if( __data.type == 'remove' ) {
                     $('.reaction-icon').addClass('inactive').removeClass('active');
                 }
+
                 // Fire toaster for message
                 Toast.fire({
                     icon: 'success',
@@ -76,4 +95,5 @@
             }
         });
     }
+
 }(jQuery));

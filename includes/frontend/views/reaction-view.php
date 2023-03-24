@@ -1,6 +1,6 @@
 <div class="reaction-button">
     <div class="reaction-icon smile <?php echo exam_reaction_button_cur() == 1 ? 'active' : 'inactive'; ?>" data-react-id="1">
-        <span class="counting"><?php echo exam_reaction_button_count_by_react_id(1) ?></span>
+        <span class="counting"><?php echo exam_reaction_button_count_by_post_and_react_id(get_the_ID(),1) ?></span>
         <svg fill="#018000" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.00 330.00" xml:space="preserve" stroke="#018000" stroke-width="0.0033" transform="matrix(1, 0, 0, 1, 0, 0)">
 
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -11,7 +11,7 @@
         </svg>
     </div>
     <div class="reaction-icon straight <?php echo exam_reaction_button_cur() == 2 ? 'active' : 'inactive'; ?>"  data-react-id="2">
-        <span class="counting"><?php echo exam_reaction_button_count_by_react_id(2) ?></span>
+        <span class="counting"><?php echo exam_reaction_button_count_by_post_and_react_id(get_the_ID(),2) ?></span>
         <svg fill="#183153" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
 
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -23,7 +23,7 @@
         </svg>
     </div>
     <div class="reaction-icon sad <?php echo exam_reaction_button_cur() == 3 ? 'active' : 'inactive'; ?>" data-react-id="3">
-        <span class="counting"><?php echo exam_reaction_button_count_by_react_id(3) ?></span>
+        <span class="counting"><?php echo exam_reaction_button_count_by_post_and_react_id(get_the_ID(),3) ?></span>
         <svg fill="#FF2500" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>

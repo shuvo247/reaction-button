@@ -21,11 +21,7 @@ class Shortcode {
      */
     public function render_shortcode() {
         ob_start();
-        if( is_user_logged_in() ) {
-            include EXAM_REACTION_BUTTON_PATH_FRONTEND . '/views/reaction-view.php';
-        }else{
-            echo esc_html__('Please loggin first','exam-reaction-button');
-        }
+        include EXAM_REACTION_BUTTON_PATH_FRONTEND . '/views/reaction-view.php';
         return ob_get_clean();
     }
 }
