@@ -1,7 +1,7 @@
 <?php 
 /**
  * Plugin Name: Reaction Button
- * Description: A wordpress plugin to accept react from user
+ * Description: Reaction button is a lightweight plugin that adds customizable reaction button to your WordPress posts and pages. Users can quickly and easily react to your content with their favorite emojis, adding a fun and engaging way to interact with your site.
  * Plugin URI: https://reaction-button.com
  * Author: MD Shakibul Islam
  * Author URI: https://github.com/shuvo247/
