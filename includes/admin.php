@@ -10,7 +10,7 @@ class Admin {
     /**
      * Initialize the constructor class
      */
-    function __construct() {
+    public function __construct() {
         new Admin\Admin_Column();
     }
 }

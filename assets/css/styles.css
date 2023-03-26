@@ -1,0 +1,102 @@
+:root {
+    --color-disabled : #c8c8c8;
+}
+
+/* Frontend style  */
+.reaction-button-wrapper {
+    margin-top: 50px;
+    margin-left: 400px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 600px;
+    padding: 10px 0;
+    border-radius: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+.reaction-button-wrapper h3 {
+    padding-bottom: 25px;
+    font-size: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.reaction-button-wrapper .reaction-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.reaction-button-wrapper .reaction-button .reaction-icon svg {
+    transition: all 0.4s ease;
+}
+.reaction-button-wrapper .reaction-button .reaction-icon svg:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.reaction-button-wrapper .reaction-button .reaction-icon.smile svg{
+    fill: var(--color-disabled);
+}
+.reaction-button-wrapper .reaction-button .reaction-icon.smile.active svg{
+    fill: #018000;
+}
+
+.reaction-button-wrapper .reaction-button .reaction-icon.straight svg{
+    fill: var(--color-disabled);
+}
+.reaction-button-wrapper .reaction-button .reaction-icon.straight.active svg{
+    fill: #183153;
+}
+
+.reaction-button-wrapper .reaction-button .reaction-icon.sad svg{
+    fill: var(--color-disabled);
+}
+.reaction-button-wrapper .reaction-button .reaction-icon.sad.active svg{
+    fill: #FF2500;
+}
+.reaction-button-wrapper .reaction-button .reaction-icon {
+    position: relative;
+}
+.reaction-button-wrapper .reaction-button .counting {
+    position: absolute;
+    top: -25px;
+    left: -20px;
+    font-size: 18px;
+    background: #595959;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50%;
+}
+
+/* End frontend styles  */
+
+/* Admin Styles  */
+.admin-reaction ul {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+.admin-reaction ul li svg{
+    width: 30px;
+    height: 30px;
+}
+.admin-reaction ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.admin-reaction ul li span {
+    font-size: 18px;
+    font-weight: 500;
+}
+.reaction-not-added {
+    font-weight: 500;
+    font-size: 16px;
+    color: #3e2d2d;
+}
+/* End admin styles  */

@@ -10,7 +10,7 @@ class Ajax {
     /**
      * Class constructor
      */
-    function __construct() {
+    public function __construct() {
         add_action( 'wp_ajax_exam_reaction_button_add', [ $this, 'submit_reaction'] );
 
         add_action( 'wp_ajax_exam_reaction_button_delete', [ $this, 'delete_reaction'] );

@@ -142,3 +142,20 @@ function exam_reaction_button_count_react( $post_id ) {
     
     return $count;
 }
+
+/**
+ * Check all react by post_id 
+ *
+ * @param $post_id
+ * 
+ * @return array
+ */
+
+function exam_reaction_button_all_react_by_post_id( $post_id ) {
+    global $wpdb;
+
+    // get all react
+    $all_react = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}exam_reaction_button` WHERE post_id = $post_id");
+
+    return $all_react;
+}

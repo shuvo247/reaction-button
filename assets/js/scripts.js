@@ -13,7 +13,7 @@
             // Fire toaster for message
             Toast.fire({
                 icon: 'error',
-                title: 'Authentication Required',
+                title: 'Unauthorized Access',
             });
             return false;
         }

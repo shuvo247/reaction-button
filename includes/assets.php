@@ -10,7 +10,7 @@ class Assets {
     /**
      * The Class constructor
      */
-    function __construct() {
+    public function __construct() {
         add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
         add_action( 'admin_enqueue_scripts', [ $this, 'register_assets' ] );
     }
@@ -28,8 +28,8 @@ class Assets {
                 'deps'    => [ 'jquery' ]
             ],
             'exam-reaction-button-script' => [
-                'src'     => EXAM_REACTION_BUTTON_ASSETS . '/js/frontend.js',
-                'version' => filemtime( EXAM_REACTION_BUTTON_PATH . '/assets/js/frontend.js' ),
+                'src'     => EXAM_REACTION_BUTTON_ASSETS . '/js/scripts.js',
+                'version' => filemtime( EXAM_REACTION_BUTTON_PATH . '/assets/js/scripts.js' ),
                 'deps'    => [ 'jquery' ]
             ],
         ];
@@ -47,8 +47,8 @@ class Assets {
                 'version' => filemtime( EXAM_REACTION_BUTTON_PATH . '/assets/css/sweetalert2.css' )
             ],
             'exam-reaction-button-style' => [
-                'src'     => EXAM_REACTION_BUTTON_ASSETS . '/css/frontend.css',
-                'version' => filemtime( EXAM_REACTION_BUTTON_PATH . '/assets/css/frontend.css' )
+                'src'     => EXAM_REACTION_BUTTON_ASSETS . '/css/styles.css',
+                'version' => filemtime( EXAM_REACTION_BUTTON_PATH . '/assets/css/styles.css' )
             ],
 
         ];

@@ -2,10 +2,11 @@
 /**
  * Plugin Name: Reaction Button
  * Description: Reaction button is a lightweight plugin that adds customizable reaction button to your WordPress posts and pages. Users can quickly and easily react to your content with their favorite emojis, adding a fun and engaging way to interact with your site.
- * Plugin URI: https://reaction-button.com
+ * Plugin URI: https://example.com
  * Author: MD Shakibul Islam
  * Author URI: https://github.com/shuvo247/
  * Version: 1.0
+ * Text Domain: exam-reaction-button
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -84,6 +85,8 @@ final class EXAM_Reaction_Button {
         new Exam\Reaction\Button\Assets();
 
         new Exam\Reaction\Button\Frontend();
+
+        new Exam\Reaction\Button\Elementor();
 
         if( is_admin() ) {
             new Exam\Reaction\Button\Admin();

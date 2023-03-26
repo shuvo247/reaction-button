@@ -19,7 +19,7 @@ class Shortcode {
      *
      * @return void
      */
-    public function render_shortcode() {
+    public function render_shortcode( $atts ) {
         ob_start();
         include EXAM_REACTION_BUTTON_PATH_FRONTEND . '/views/reaction-view.php';
         return ob_get_clean();
