@@ -35,6 +35,9 @@
 .reaction-button-wrapper .reaction-button .reaction-icon.smile svg{
     fill: var(--color-disabled);
 }
+.reaction-button-wrapper .reaction-button .reaction-icon.smile:hover svg{
+    fill: #018000;
+}
 .reaction-button-wrapper .reaction-button .reaction-icon.smile.active svg{
     fill: #018000;
 }
@@ -42,12 +45,18 @@
 .reaction-button-wrapper .reaction-button .reaction-icon.straight svg{
     fill: var(--color-disabled);
 }
+.reaction-button-wrapper .reaction-button .reaction-icon.straight:hover svg{
+    fill: #018000;
+}
 .reaction-button-wrapper .reaction-button .reaction-icon.straight.active svg{
     fill: #183153;
 }
 
 .reaction-button-wrapper .reaction-button .reaction-icon.sad svg{
     fill: var(--color-disabled);
+}
+.reaction-button-wrapper .reaction-button .reaction-icon.sad:hover svg{
+    fill: #FF2500;
 }
 .reaction-button-wrapper .reaction-button .reaction-icon.sad.active svg{
     fill: #FF2500;
