@@ -162,7 +162,7 @@ class Elementor_Reaction_Button_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'reaction_button_icon_style_size_width',
 			[
-				'label' => esc_html__( 'Width', 'textdomain' ),
+				'label' => esc_html__( 'Width', 'exam-reaction-button' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -181,7 +181,7 @@ class Elementor_Reaction_Button_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'reaction_button_icon_style_size_height',
 			[
-				'label' => esc_html__( 'Height', 'textdomain' ),
+				'label' => esc_html__( 'Height', 'exam-reaction-button' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
