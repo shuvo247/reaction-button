@@ -1,6 +1,6 @@
 <div class="reaction-button-wrapper">
     <?php if( isset( $settings['exam_reaction_button_general_title'] ) ) : ?>
-        <h3><?php echo esc_html( $settings['exam_reaction_button_general_title'] ) ?></h3>
+        <h3 class="reaction-heading"><?php echo esc_html( $settings['exam_reaction_button_general_title'] ) ?></h3>
     <?php else : ?>
         <h3><?php echo isset( $atts['title'] ) ? esc_html( $atts['title'] ) : __('Share your exparience with us!!','exam-reaction-button') ?></h3>
     <?php endif ?>

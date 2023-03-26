@@ -88,6 +88,8 @@ final class EXAM_Reaction_Button {
 
         new Exam\Reaction\Button\Elementor();
 
+        new Exam\Reaction\Button\Gutenberg();
+
         if( is_admin() ) {
             new Exam\Reaction\Button\Admin();
         }
