@@ -77,21 +77,17 @@ class Elementor_Reaction_Button_Widget extends \Elementor\Widget_Base {
 				'label' 		=> esc_html__( 'Icon Align', 'exam-reaction-button' ),
 				'type' 			=> \Elementor\Controls_Manager::CHOOSE,
 				'options' 		=> [
-					'left' 		=> [
-						'title' => esc_html__( 'Left', 'exam-reaction-button' ),
+					'start' 		=> [
+						'title' => esc_html__( 'Start', 'exam-reaction-button' ),
 						'icon' 	=> 'eicon-text-align-left',
 					],
 					'center' 	=> [
 						'title' => esc_html__( 'Center', 'exam-reaction-button' ),
 						'icon' 	=> 'eicon-text-align-center',
 					],
-					'right' 	=> [
-						'title' => esc_html__( 'Right', 'exam-reaction-button' ),
+					'end' 	=> [
+						'title' => esc_html__( 'End', 'exam-reaction-button' ),
 						'icon' 	=> 'eicon-text-align-right',
-					],
-					'justify' 	=> [
-						'title' => esc_html__( 'Justified', 'exam-reaction-button' ),
-						'icon' 	=> 'eicon-text-align-justify',
 					],
 				],
 				'default' 		=> 'center',
